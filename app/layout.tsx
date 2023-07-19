@@ -1,14 +1,14 @@
+import { Navbar } from "@/components";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "<LaLa/> Portfolio",
   description: "Nattida Jangpipatnavakij Portfolio",
   icons: {
-    icon: "/favicon.ico",
+    icon: { url: "/favicon.ico", type: "ico" },
+    shortcut: { url: "/favicon.ico", type: "ico" },
   },
 };
 
@@ -19,7 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="font-roboto">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
