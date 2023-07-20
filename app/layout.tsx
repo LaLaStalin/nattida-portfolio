@@ -18,9 +18,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="font-roboto">
+    <html lang="en" className="scroll-smooth">
+      <body className="font-roboto bg-[#222] ">
         <Navbar />
+
         {children}
       </body>
     </html>

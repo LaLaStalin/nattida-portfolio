@@ -24,4 +24,84 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    cursor: none;
+}
+
+@keyframes textTyper {
+  0% { opacity: 0; transform: translateY(-30px); }
+  25% { opacity: 1; transform: translateY(0px); }
+  75% { opacity: 1; transform: translateY(0px); }
+  100% { opacity: 0; transform: translateY(-30px); }  
+}
+
+.animate-text {
+  animation-name: textTyper;
+  animation-duration: 6s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 550px;
+  }
+  100% {
+    background-position: 550px;
+  }
+}
+
+html{scroll-behavior: smooth;}
+
+
+
+.naming-animate {
+  color: hsl(0, 0%, 28%);
+  cursor: pointer;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #5918df 0, hsl(0, 0%, 100%) 10%, #5918df 20%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+}
+
+.gradient-nav {
+  background: linear-gradient(180deg, #100E17 0%, rgba(16, 14, 23, 0.00) 100%);
+}
+
+.inner-cursor {
+  position: fixed;
+  z-index: 9999;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: width 0.5s, height 0.5s;
+}
+
+.inner-cursor.grow {
+  width: 30px;
+  height: 30px;
+  transition: width 0.5s, height 0.5s;
+}
+
+.outer-cursor {
+  z-index: 9999;
+  position: fixed;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  transform: translate(-50%, -50%);
+  border: 1px solid #fff;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: 0.1s;
 }
