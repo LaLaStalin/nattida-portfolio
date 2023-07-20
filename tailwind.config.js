@@ -23,6 +23,13 @@ module.exports = {
     fontFamily: {
       robotoCondensed: ["Roboto Condensed"],
       roboto: ["Roboto Condensed", "Lato", "Arial", "sans-serif"],
+      robotoMono: [
+        "Roboto Mono",
+        "Consolas",
+        "Courier New",
+        "Courier",
+        "monospace",
+      ],
       palatino: ["Palatino", "Georgia", "Times New Roman", "Times", "serif"],
     },
     extend: {
@@ -30,8 +37,6 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "nav-linear":
-          "background: linear-gradient(180deg, #100E17 0%, rgba(16, 14, 23, 0.00) 100%)",
       },
     },
   },

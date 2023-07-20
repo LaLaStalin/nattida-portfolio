@@ -105,3 +105,11 @@ html{scroll-behavior: smooth;}
   pointer-events: none;
   transition: 0.1s;
 }
+
+.active-nav {
+  color: #fff
+}
+
+.active-nav:active {
+  color: #fff
+}

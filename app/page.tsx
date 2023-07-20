@@ -44,7 +44,7 @@ export default function Home() {
   const heroSection = () => {
     return (
       <section
-        id="hero-section"
+        id="#"
         className="px-[16px] relative h-[780px] mt-[-80px] bg-[url('/assets/bg-hero.jpg')] bg-cover bg-no-repeat"
       >
         <div className="w-full h-full flex flex-col justify-end max-w-[1024px] mx-auto">
@@ -89,20 +89,37 @@ export default function Home() {
   return (
     <main className="">
       {heroSection()}
-      <section id="work-section" className="px-[16px] relative h-[780px]">
-        <div className="w-full h-full flex flex-col justify-start max-w-[1024px] mx-auto">
+      <section
+        id="work"
+        className="px-[16px] relative h-[780px] bg-[#1a1527] bg-gradient-to-b from-[#1a1527] to-[#0e0c16]"
+        // style={ background-color:linear-gradient(-180deg, #1a1527, #0e0c16 88%, #0e0c16 99%)}
+      >
+        <div className="absolute right-0 top-10 z-[1]">
+          <h1 className="text-[#221d35] font-bold text-[200px] ">WEB</h1>
+        </div>
+        <div className="w-full h-full flex flex-col justify-start max-w-[1024px] mx-auto z-20">
           <TimelineComponent hightBottom="500px" lineTop={true}>
-            <p className=" text-text-secondaryDark text-[18px] font-light pt-[30px]">
+            <p className=" text-text-secondaryDark text-[18px] font-light pt-[30px] z-10">
               Work{" />"}
             </p>
-            <p className="text-text-secondaryDark text-[30px] font-semibold tracking-tight   pb-[16px]">
+            <p className="text-text-secondaryDark text-[30px] font-semibold tracking-tight pb-[16px] z-10">
               Selected web, mobile, video projects...
             </p>
 
-            <CardWork />
+            {/* Card Work*/}
+            <div className="flex h-[540px] z-20">
+              <div className="ml-[-200px] px-[16px] ">
+                <CardWork />
+              </div>
+              <div className="px-[16px]">
+                <CardWork />
+              </div>
+            </div>
           </TimelineComponent>
         </div>
       </section>
+
+      {/* Cursor */}
       <span className="inner-cursor"></span>
       <span className="outer-cursor"></span>
     </main>
