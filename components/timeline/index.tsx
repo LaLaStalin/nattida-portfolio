@@ -23,7 +23,7 @@ const TimelineComponent = ({
             className="w-[1px] bg-while"
           ></span>
         </div>
-        <div className="ml-[24px]">{children}</div>
+        <div className="ml-[24px] sm:ml-2">{children}</div>
       </div>
     </>
   );
