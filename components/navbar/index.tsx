@@ -39,8 +39,8 @@ const Navbar = () => {
   };
 
   return (
-    <header className="w-full z-50 py-[8px] px-[24px] gradient-nav sticky top-0">
-      <nav className="flex items-center justify-between relative">
+    <header className="w-full z-50 py-[8px] px-[24px] sticky top-0  bg-gradient-to-b from-[#100E17]">
+      <nav className="flex items-center justify-between relative ">
         <div className="flex items-center ">
           <ChevronLeftIcon className=" text-primary-mainDark text-[32px] mr-[-4px]" />
           <h1 className="text-text-primaryDark text-[40px] font-bold">LALA</h1>

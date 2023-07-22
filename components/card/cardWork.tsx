@@ -1,9 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import EastIcon from "@mui/icons-material/East";
 import { useMotionValue, useTransform, motion } from "framer-motion";
-import Button from "@mui/material/Button";
 import Link from "next/link";
 
 interface figmaType {

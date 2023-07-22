@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { CardMotion, CardWork, TimelineComponent } from "@/components";
 import Work from "./pages/work";
+import About from "./pages/about";
+import Contact from "./pages/contact";
 
 export default function Home() {
   const [nameTyping, setNameTyping] = useState<string>(
@@ -82,6 +84,12 @@ export default function Home() {
 
       {/* Work Section */}
       <Work />
+
+      {/* About Section */}
+      <About />
+
+      {/* Contact Section */}
+      <Contact />
 
       {/* Cursor */}
       <span className="inner-cursor"></span>

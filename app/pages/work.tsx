@@ -1,4 +1,5 @@
 import { CardWork, TimelineComponent } from "@/components";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 const Work = () => {
@@ -21,7 +22,7 @@ const Work = () => {
     <>
       <section
         id="work"
-        className="pb-[16px] px-[16px] relative h-full md:h-full bg-[#1a1527] bg-gradient-to-b from-[#1a1527] to-[#0e0c16]"
+        className=" px-[16px] relative h-full md:h-full bg-[#1a1527] bg-gradient-to-b from-[#1a1527] to-[#0e0c16]"
         // style={ background-color:linear-gradient(-180deg, #1a1527, #0e0c16 88%, #0e0c16 99%)}
       >
         <div className="absolute right-0 top-10 z-[1]">
@@ -45,7 +46,7 @@ const Work = () => {
                   indexCard="00"
                   imgWidth={410}
                   imgHeight={230}
-                  imgSrc="Luna-Home.png"
+                  imgSrc="lunaled.png"
                   onHoverCard={onHoverCard}
                   hoveringCard={hoveringCard}
                   toolList={[
@@ -58,24 +59,24 @@ const Work = () => {
                   onPopupImgWebsite={onPopupImgWebsite}
                 />
               </div>
-              <div className="px-[16px] mt-[260px] ml-[-100px] md:m-0">
+              <div className="px-[16px] md:px-0 mt-[260px] ml-[-100px] md:m-0">
                 <CardWork
                   indexCard="01"
                   imgWidth={410}
                   imgHeight={230}
-                  imgSrc="Luna-Home.png"
+                  imgSrc="lunaled.png"
                   onHoverCard={onHoverCard}
                   hoveringCard={hoveringCard}
                   toolList={["next", "react"]}
                 />
               </div>
 
-              <div className="px-[16px] mt-[100px] ml-[100px] mr-[-100px] md:mx-0">
+              <div className="px-[16px] md:px-0 mt-[100px] ml-[100px] mr-[-100px] md:mx-0">
                 <CardWork
                   indexCard="02"
                   imgWidth={230}
                   imgHeight={410}
-                  imgSrc="webApp.png"
+                  imgSrc="mello.png"
                   onHoverCard={onHoverCard}
                   hoveringCard={hoveringCard}
                   toolList={["next", "react"]}
@@ -85,29 +86,47 @@ const Work = () => {
 
             {/* WEB - row 2 */}
             <div className="flex z-20 md:flex-col md:gap-[32px] mt-[40px]">
-              <div className="px-[16px] ml-[-160px] md:ml-0 ">
+              <div className="px-[16px] md:px-0 ml-[-160px] md:ml-0 ">
                 <CardWork
                   indexCard="03"
                   imgWidth={410}
                   imgHeight={230}
-                  imgSrc="Luna-Home.png"
+                  imgSrc="lunaled.png"
                   onHoverCard={onHoverCard}
                   hoveringCard={hoveringCard}
                   toolList={["next", "react"]}
                 />
               </div>
-              <div className="px-[16px] ml-[200px] mt-[120px] md:m-0">
+              <div className="px-[16px] md:px-0 ml-[200px] mt-[120px] md:m-0">
                 <CardWork
                   indexCard="04"
                   imgWidth={410}
                   imgHeight={230}
-                  imgSrc="Luna-Home.png"
+                  imgSrc="lunaled.png"
                   onHoverCard={onHoverCard}
                   hoveringCard={hoveringCard}
                   toolList={["next", "react"]}
                 />
               </div>
             </div>
+
+            {/* Video */}
+            <div className="mt-[80px]">
+              <h1 className="text-[#221d35] font-bold text-[100px] sm:hidden uppercase text-center">
+                Showreel
+              </h1>
+            </div>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.2 }}
+              className="mt-[-50px] pb-[100px]"
+            >
+              <video
+                src="/assets/video/kinraidee.mp4"
+                controls
+                color="#5918df"
+              />
+            </motion.div>
           </TimelineComponent>
         </div>
       </section>

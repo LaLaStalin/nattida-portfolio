@@ -68,9 +68,7 @@ html{scroll-behavior: smooth;}
   animation: shine 3s infinite linear;
 }
 
-.gradient-nav {
-  background: linear-gradient(180deg, #100E17 0%, rgba(16, 14, 23, 0.00) 100%);
-}
+
 
 .inner-cursor {
   position: fixed;
