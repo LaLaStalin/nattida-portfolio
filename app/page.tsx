@@ -65,7 +65,7 @@ export default function Home() {
               <p className="text-text-primaryDark  font-bold">
                 and develop&nbsp;
               </p>
-              <p className="text-text-primaryDark font-bold">ux/ui</p>
+              <p className="text-text-primaryDark font-bold">website</p>
             </div>
 
             <p className="text-text-secondaryDark text-[24px] font-normal my-[8px] pb-[16px]">

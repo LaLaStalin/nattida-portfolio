@@ -21,9 +21,14 @@ const Navbar = () => {
     const scrollTrigger = (e: any) => {
       if (window.scrollY >= 0 && window.scrollY <= 600) {
         setLinkActive("#");
-      } else if (window.scrollY >= 601 && window.scrollY <= 1400) {
+      } else if (window.scrollY >= 601 && window.scrollY <= 2560) {
         setLinkActive("work");
       }
+      // } else if (window.scrollY >= 2561 && window.scrollY <= 3000) {
+      //   setLinkActive("about");
+      // } else if (window.scrollY >= 3001) {
+      //   setLinkActive("contact");
+      // }
     };
 
     window.document.addEventListener("scroll", scrollTrigger);

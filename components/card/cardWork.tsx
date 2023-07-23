@@ -92,7 +92,10 @@ const CardWork = ({
         className={`flex flex-col px-2 gap-[8px] z-[2] cursor-pointer`}
       >
         {toolList.map((tool) => (
-          <label className="text-[12px] font-bold text-primary-mainDark bg-[#7848d934] rounded-[4px] p-1 text-center">
+          <label
+            key={tool}
+            className="text-[12px] font-bold text-primary-mainDark bg-[#7848d934] rounded-[4px] p-1 text-center"
+          >
             {tool}
           </label>
         ))}

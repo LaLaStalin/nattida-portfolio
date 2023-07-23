@@ -52,7 +52,7 @@ const Contact = () => {
             </h1>
             <div className="grid grid-cols-3 gap-[16px] md:grid-cols-2 sm:grid-cols-1">
               {contactList.map((contact) => (
-                <Link href={contact.href} target="_blank">
+                <Link href={contact.href} target="_blank" key={contact.name}>
                   <button className="text-text-secondaryDark text-[16px] p-[8px] ml-[-8px] flex lfex items-center gap-2 hover:bg-[#5a18df0f] rounded-[8px]">
                     <Icon
                       icon={contact.icon}

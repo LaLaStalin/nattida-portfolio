@@ -1,27 +1,44 @@
 import { TimelineComponent } from "@/components";
-import { Content } from "next/font/google";
+import { useState } from "react";
 
 const About = () => {
-  const contentList: string[] = ["01", "02", "03", "04", "05", "06", "07"];
+  const contentList: string[] = Array.from(Array(22), (_: any, x: any) =>
+    x === 9
+      ? (x + 1).toString()
+      : x.toString().length < 2
+      ? "0" + (x + 1)
+      : (x + 1).toString()
+  );
+
+  const [hoveringIndent, setHoveringIndent] = useState<string>("");
   const workExperienceList = [
     {
+      id: "11",
       date: "06/2023-Present",
       description:
         "Front-End Developer at asteroid group (Thailand)  Co., Ltd.",
     },
     {
+      id: "12",
+
       date: "01/2023-05/2023",
       description: "UX/UI Designer at G-able ( Blend Data Co., Ltd. )",
     },
     {
+      id: "13",
+
       date: "08/2021-11/2022",
       description: "Project Coordinator at Thai Programmer Association",
     },
   ];
 
-  const showTitle = (title: string) => {
+  const showTitle = (title: string, id: string) => {
     return (
-      <div className="flex gap-[16px]">
+      <div
+        className="flex gap-[16px]"
+        onMouseOver={() => setHoveringIndent(id)}
+        onMouseLeave={() => setHoveringIndent("null")}
+      >
         <span className="flex">
           <p className="text-[#3B3553] ">··</p>
           <p className="text-[#EEFF31] ">{title}</p>
@@ -33,15 +50,18 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="bg-[#14121c] px-[16px]">
+    <section id="about" className="bg-[#14121c] md:px-[16px]">
       {/* Column Content*/}
-      <div className="absolute pt-[54px] w-full z-1 ">
-        <p className="text-[18px] pl-[220px] font-robotoMono font-thin text-[#3B3553] hover:bg-[#231d285c] z-1">
-          01
-        </p>
-        {contentList.map((index) => (
-          <p className="sm:hidden text-[18px] pl-[220px] font-robotoMono font-thin text-[#3B3553] hover:bg-[#231d285c] {}z-1">
-            {index}
+      <div className="absolute pt-[54px] w-full z-1 md:hidden">
+        {contentList.map((number) => (
+          <p
+            key={number}
+            className={`sm:hidden text-[16x] pl-[210px] font-robotoMono font-thin 
+          text-[#3B3553] hover:bg-[#231d285c] ${
+            hoveringIndent === number && "bg-[#231d285c]"
+          }`}
+          >
+            {number}
           </p>
         ))}
         {/* {showNumber()} */}
@@ -59,27 +79,43 @@ const About = () => {
 
           <article className="text-[16px] font-robotoMono z-30">
             {/* 01 */}
-            <div className="flex gap-[16px]  w-[100%]">
+            <div
+              className="flex gap-[16px] w-[100%]"
+              onMouseOver={() => setHoveringIndent("01")}
+              onMouseLeave={() => setHoveringIndent("null")}
+            >
               <p className="text-primary-mainDark font-extralight">class </p>
               <p className="text-[#EEFF31] ">Nattida Jangpipatnavakij</p>
               <p className="text-while"> {"{"}</p>
             </div>
             {/* 02 */}
-            <div className="flex flex-wrap">
+            <div
+              className="flex flex-wrap"
+              onMouseOver={() => setHoveringIndent("02")}
+              onMouseLeave={() => setHoveringIndent("null")}
+            >
               <p className="text-[#3B3553] ">··</p>
               <p className="text-[#78707E] font-extralight">
                 // I can, because I did.
               </p>
             </div>
             {/* 03 */}
-            <div className="flex flex-wrap">
+            <div
+              className="flex flex-wrap"
+              onMouseOver={() => setHoveringIndent("03")}
+              onMouseLeave={() => setHoveringIndent("null")}
+            >
               <p className="text-[#3B3553] ">··</p>
               <p className="text-[#78707E] font-extralight">
                 // My vast variety of skills is continuously expanding.
               </p>
             </div>
             {/* 04 */}
-            <div className="flex gap-[16px] ">
+            <div
+              className="flex gap-[16px]"
+              onMouseOver={() => setHoveringIndent("04")}
+              onMouseLeave={() => setHoveringIndent("null")}
+            >
               <span className="flex flex-wrap">
                 <p className="text-[#3B3553] ">··</p>
                 <p className="text-primary-mainDark font-extralight">
@@ -90,7 +126,11 @@ const About = () => {
               <p className="text-while"> {"{"}</p>
             </div>
             {/* 05 */}
-            <div className="flex gap-[16px]">
+            <div
+              className="flex gap-[16px]"
+              onMouseOver={() => setHoveringIndent("05")}
+              onMouseLeave={() => setHoveringIndent("null")}
+            >
               <span className="flex ">
                 <p className="text-[#3B3553] ">····</p>
                 <p className="text-[#E3244C] font-thin">this</p>
@@ -101,7 +141,11 @@ const About = () => {
               <p className="text-[#24E33A] ">'Nattida Jangpipatnavakij'</p>
             </div>
             {/* 06 */}
-            <div className="flex gap-[16px]">
+            <div
+              className="flex gap-[16px]"
+              onMouseOver={() => setHoveringIndent("06")}
+              onMouseLeave={() => setHoveringIndent("null")}
+            >
               <span className="flex flex-wrap">
                 <p className="text-[#3B3553] ">····</p>
                 <p className="text-[#E3244C] font-thin">this</p>
@@ -112,7 +156,11 @@ const About = () => {
               <p className="text-[#24E33A] ">10/11/2000</p>
             </div>
             {/* 07 */}
-            <div className="flex gap-[16px]">
+            <div
+              className="flex gap-[16px]"
+              onMouseOver={() => setHoveringIndent("07")}
+              onMouseLeave={() => setHoveringIndent("null")}
+            >
               <span className="flex ">
                 <p className="text-[#3B3553] ">····</p>
                 <p className="text-[#E3244C] font-thin">this</p>
@@ -123,24 +171,37 @@ const About = () => {
               <p className="text-[#24E33A]">'nattida.jangpipat@gmail.com'</p>
             </div>
             {/* 08 */}
-            <span className="flex">
+            <span
+              className="flex"
+              onMouseOver={() => setHoveringIndent("08")}
+              onMouseLeave={() => setHoveringIndent("null")}
+            >
               <p className="text-[#3B3553] ">···</p>
               <p className="text-while"> {"}"}</p>
             </span>
             {/* 09 */}
-            {showTitle("workExperience")}
+            {showTitle("workExperience", "09")}
 
             {/* 10 */}
-            <div className="flex gap-[16px]">
+            <div
+              className="flex gap-[16px]"
+              onMouseOver={() => setHoveringIndent("10")}
+              onMouseLeave={() => setHoveringIndent("null")}
+            >
               <span className="flex">
                 <p className="text-[#3B3553] ">····</p>
                 <p className="text-primary-mainDark font-extralight">return</p>
               </span>
               <p className="text-while">{"["}</p>
             </div>
-            {/* 11 - 15 */}
+            {/* 11 - 13 */}
             {workExperienceList.map((work) => (
-              <div className="flex gap-[16px]">
+              <div
+                className="flex gap-[16px]"
+                key={work.id}
+                onMouseOver={() => setHoveringIndent(work.id)}
+                onMouseLeave={() => setHoveringIndent("null")}
+              >
                 <span className="flex">
                   <p className="text-[#3B3553] ">······</p>
                   <p className="text-while ">{"{"}</p>
@@ -152,31 +213,47 @@ const About = () => {
               </div>
             ))}
 
-            {/* 16 */}
-            <span className="flex ">
+            {/* 14 */}
+            <span
+              className="flex"
+              onMouseOver={() => setHoveringIndent("14")}
+              onMouseLeave={() => setHoveringIndent("null")}
+            >
               <p className="text-[#3B3553] ">····</p>
               <p className="text-while"> {"]"}</p>
             </span>
 
-            {/* 17 */}
-            <span className="flex ">
+            {/* 15 */}
+            <span
+              className="flex"
+              onMouseOver={() => setHoveringIndent("15")}
+              onMouseLeave={() => setHoveringIndent("null")}
+            >
               <p className="text-[#3B3553] ">··</p>
               <p className="text-while"> {"}"}</p>
             </span>
-            {/* 18 */}
-            {showTitle("education")}
+            {/* 16 */}
+            {showTitle("education", "16")}
 
-            {/* 19 */}
+            {/* 17 */}
 
-            <div className="flex gap-[16px]">
+            <div
+              className="flex gap-[16px]"
+              onMouseOver={() => setHoveringIndent("17")}
+              onMouseLeave={() => setHoveringIndent("null")}
+            >
               <span className="flex">
                 <p className="text-[#3B3553] ">····</p>
                 <p className="text-primary-mainDark font-extralight">return</p>
               </span>
               <p className="text-while">{"["}</p>
             </div>
-            {/* 20 */}
-            <div className="flex gap-[16px]">
+            {/* 18 */}
+            <div
+              className="flex gap-[16px]"
+              onMouseOver={() => setHoveringIndent("18")}
+              onMouseLeave={() => setHoveringIndent("null")}
+            >
               <span className="flex">
                 <p className="text-[#3B3553] ">······</p>
                 <p className="text-while ">{"{"}</p>
@@ -188,22 +265,34 @@ const About = () => {
               </p>
               <p className="text-while ">{"}"}</p>
             </div>
-            {/* 21 */}
-            <span className="flex">
+            {/* 19 */}
+            <span
+              className="flex"
+              onMouseOver={() => setHoveringIndent("19")}
+              onMouseLeave={() => setHoveringIndent("null")}
+            >
               <p className="text-[#3B3553] ">····</p>
               <p className="text-while"> {"]"}</p>
             </span>
 
-            {/* 22 */}
-            <span className="flex">
+            {/* 20 */}
+            <span
+              className="flex"
+              onMouseOver={() => setHoveringIndent("20")}
+              onMouseLeave={() => setHoveringIndent("null")}
+            >
               <p className="text-[#3B3553] ">··</p>
               <p className="text-while"> {"}"}</p>
             </span>
-            {/* 23 */}
-            {showTitle("skills")}
+            {/* 21 */}
+            {showTitle("skills", "21")}
 
-            {/* 24 */}
-            <div className="flex gap-[16px]">
+            {/* 22 */}
+            <div
+              className="flex gap-[16px]"
+              onMouseOver={() => setHoveringIndent("22")}
+              onMouseLeave={() => setHoveringIndent("null")}
+            >
               <span className="flex">
                 <p className="text-[#3B3553] ">····</p>
                 <p className="text-primary-mainDark font-extralight">return</p>
@@ -218,14 +307,25 @@ const About = () => {
                 'Bootstrap', 'Material UI'
               </p>
             </div>
-            {/* 25 */}
-            <span className="flex">
+            {/* 23 */}
+            <span
+              className="flex"
+              onMouseOver={() => setHoveringIndent("23")}
+              onMouseLeave={() => setHoveringIndent("null")}
+            >
               <p className="text-[#3B3553] ">··</p>
               <p className="text-while"> {"}"}</p>
             </span>
 
-            {/* 26 */}
-            <p className="text-while"> {"}"}</p>
+            {/* 24 */}
+            <p
+              className="text-while"
+              onMouseOver={() => setHoveringIndent("24")}
+              onMouseLeave={() => setHoveringIndent("null")}
+            >
+              {" "}
+              {"}"}
+            </p>
           </article>
         </TimelineComponent>
       </div>

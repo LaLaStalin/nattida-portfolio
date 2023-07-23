@@ -40,7 +40,7 @@ const Work = () => {
             </p>
 
             {/* Card Work - WEB*/}
-            <div className="flex z-20 md:flex-col  md:gap-[32px]">
+            <div className="flex z-20 md:flex-col md:gap-[40px]">
               <div className="ml-[-200px] px-[16px] md:ml-0 ">
                 <CardWork
                   indexCard="00"
@@ -85,7 +85,7 @@ const Work = () => {
             </div>
 
             {/* WEB - row 2 */}
-            <div className="flex z-20 md:flex-col md:gap-[32px] mt-[40px]">
+            <div className="flex z-20 md:flex-col md:gap-[40px] mt-[40px]">
               <div className="px-[16px] md:px-0 ml-[-160px] md:ml-0 ">
                 <CardWork
                   indexCard="03"
