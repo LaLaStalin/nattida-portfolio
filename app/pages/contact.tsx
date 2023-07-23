@@ -38,16 +38,16 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="bg-[#0e0d10] px-[16px]">
+    <section id="contact" className="bg-[#0e0d10]  px-[16px]">
       <div className="w-full h-full flex flex-col justify-start max-w-[1024px] mx-auto z-20">
         <TimelineComponent hightBottom="100%" lineTop={true}>
-          <p className=" text-text-secondaryDark text-[18px] font-light pt-[30px] z-10">
+          <p className=" text-text-secondaryDark text-[18px] font-light pt-[62px] z-10">
             Contact{" />"}
           </p>
 
           {/* Find me on */}
-          <div className="mt-[80px] mb-[200px]">
-            <h1 className="text-while text-[22px] pt-[8px] pb-[2px]">
+          <div className="mt-[180px] mb-[240px]">
+            <h1 className="text-while text-[22px] pt-[8px] pb-[16px]">
               Find me on:
             </h1>
             <div className="grid grid-cols-3 gap-[16px] md:grid-cols-2 sm:grid-cols-1">
@@ -68,7 +68,7 @@ const Contact = () => {
           </div>
           <p className="text-[12px] text-text-secondaryDark pb-[8px]">
             {
-              "© Made with </> by LaLa. Thailand 2023. reference: https://yasio.dev"
+              "© Made with </> by LaLa. Thailand 2023. reference desgin: https://yasio.dev"
             }
           </p>
         </TimelineComponent>

@@ -32,7 +32,7 @@ const Work = () => {
         </div>
         <div className="w-full h-full flex flex-col justify-start max-w-[1024px] mx-auto z-20">
           <TimelineComponent hightBottom="100%" lineTop={true}>
-            <p className=" text-text-secondaryDark text-[18px] font-light pt-[30px] z-10">
+            <p className=" text-text-secondaryDark text-[18px] font-light pt-[68px] z-10">
               Work{" />"}
             </p>
             <p className="text-text-secondaryDark text-[30px] sm:text-[24px] font-semibold tracking-tight pb-[16px] z-10">
@@ -46,14 +46,16 @@ const Work = () => {
                   indexCard="00"
                   imgWidth={410}
                   imgHeight={230}
-                  imgSrc="lunaled.png"
+                  imgSrc="food-recipe-center.png"
+                  nameProject="Food recipe Center"
                   onHoverCard={onHoverCard}
                   hoveringCard={hoveringCard}
                   toolList={[
-                    "Next.js",
-                    "Tailwind",
-                    "TypeScript",
-                    "Material UI",
+                    "React.js",
+                    "Styled-Components",
+                    "Bootstrap",
+                    "PHP",
+                    "MySQL",
                   ]}
                   figmaLink={{ name: "Figma", link: "#" }}
                   onPopupImgWebsite={onPopupImgWebsite}
@@ -65,9 +67,16 @@ const Work = () => {
                   imgWidth={410}
                   imgHeight={230}
                   imgSrc="lunaled.png"
+                  nameProject="Luna LED"
                   onHoverCard={onHoverCard}
                   hoveringCard={hoveringCard}
-                  toolList={["next", "react"]}
+                  toolList={[
+                    "Next.js",
+                    "Tailwind",
+                    "TypeScript",
+                    "Material UI",
+                  ]}
+                  figmaLink={{ name: "Figma", link: "#" }}
                 />
               </div>
 
@@ -76,10 +85,12 @@ const Work = () => {
                   indexCard="02"
                   imgWidth={230}
                   imgHeight={410}
-                  imgSrc="mello.png"
+                  imgSrc="mobile-mello.png"
+                  nameProject="MELLO"
                   onHoverCard={onHoverCard}
                   hoveringCard={hoveringCard}
-                  toolList={["next", "react"]}
+                  toolList={["C#", "Firebase"]}
+                  figmaLink={{ name: "Figma", link: "#" }}
                 />
               </div>
             </div>
@@ -91,10 +102,17 @@ const Work = () => {
                   indexCard="03"
                   imgWidth={410}
                   imgHeight={230}
-                  imgSrc="lunaled.png"
+                  imgSrc="portfolio.png"
+                  nameProject="Portfolio"
                   onHoverCard={onHoverCard}
                   hoveringCard={hoveringCard}
-                  toolList={["next", "react"]}
+                  toolList={[
+                    "Next.js",
+                    "Tailwind",
+                    "TypeScript",
+                    "Material UI",
+                  ]}
+                  figmaLink={{ name: "Figma", link: "#" }}
                 />
               </div>
               <div className="px-[16px] md:px-0 ml-[200px] mt-[120px] md:m-0">
@@ -102,10 +120,50 @@ const Work = () => {
                   indexCard="04"
                   imgWidth={410}
                   imgHeight={230}
-                  imgSrc="lunaled.png"
+                  imgSrc="bakery-material.png"
+                  nameProject="Bakery Material"
                   onHoverCard={onHoverCard}
                   hoveringCard={hoveringCard}
-                  toolList={["next", "react"]}
+                  toolList={["C#", "VScode 2019"]}
+                />
+              </div>
+            </div>
+
+            {/* WEB - row 3 */}
+            <div className="flex z-20 md:flex-col md:gap-[40px]">
+              <div className="px-[16px]">
+                <CardWork
+                  indexCard="05"
+                  imgWidth={230}
+                  imgHeight={410}
+                  imgSrc="mobile-food-recipe-center.png"
+                  nameProject="Food Recipe Center (responsive)"
+                  onHoverCard={onHoverCard}
+                  hoveringCard={hoveringCard}
+                  toolList={[
+                    "React.js",
+                    "Styled-Components",
+                    "Bootstrap",
+                    "PHP",
+                    "MySQL",
+                  ]}
+                />
+              </div>
+              <div className="px-[16px] md:px-0 mt-[100px] ml-[180px]  md:mx-0">
+                <CardWork
+                  indexCard="06"
+                  imgWidth={230}
+                  imgHeight={410}
+                  imgSrc="mobile-portfolio.png"
+                  nameProject="Portfolio (responsive)"
+                  onHoverCard={onHoverCard}
+                  hoveringCard={hoveringCard}
+                  toolList={[
+                    "Next.js",
+                    "Tailwind",
+                    "TypeScript",
+                    "Material UI",
+                  ]}
                 />
               </div>
             </div>

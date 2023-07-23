@@ -5,6 +5,8 @@ import { CardMotion, CardWork, TimelineComponent } from "@/components";
 import Work from "./pages/work";
 import About from "./pages/about";
 import Contact from "./pages/contact";
+import Link from "next/link";
+import CodeIcon from "@mui/icons-material/Code";
 
 export default function Home() {
   const [nameTyping, setNameTyping] = useState<string>(
@@ -36,6 +38,11 @@ export default function Home() {
     });
   }, []);
 
+  const scrollToElement = (path: string) => {
+    const section = document.getElementById(path);
+    section?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   const homeSection = () => {
     return (
       <section
@@ -56,7 +63,6 @@ export default function Home() {
                 <span className="opacity-0">exceed</span>
               </div>
             </div>
-
             <div className="flex pb-[16px] text-[36px] sm:text-[24px]">
               <p className="text-text-primaryDark  font-bold">i&nbsp;</p>
               <p className="text-text-primaryDark font-light italic  font-palatino">
@@ -67,10 +73,27 @@ export default function Home() {
               </p>
               <p className="text-text-primaryDark font-bold">website</p>
             </div>
-
             <p className="text-text-secondaryDark text-[24px] font-normal my-[8px] pb-[16px]">
               Let me show You...
             </p>
+            <Link href="/assets/nattida -resume-front-end.pdf" target="_blank">
+              <button className="btn">Download Resume</button>
+            </Link>
+
+            <Link
+              href={"#work"}
+              passHref
+              key={"work"}
+              scroll={false}
+              onClick={() => scrollToElement("work")}
+            >
+              <span className="flex gap-[8px] -rotate-90 absolute ml-[-81px] bottom-40 items-center sm:hidden rounded-[4px] p-[4px] hover:bg-[#5a18df0f] ">
+                <p className="text-[14px] text-primary-mainDark  bg-[#100E17]">
+                  SCROLL
+                </p>
+                <CodeIcon className="drop-shadow-2xl" />
+              </span>
+            </Link>
           </TimelineComponent>
         </div>
       </section>

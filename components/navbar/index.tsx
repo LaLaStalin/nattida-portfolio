@@ -23,12 +23,12 @@ const Navbar = () => {
         setLinkActive("#");
       } else if (window.scrollY >= 601 && window.scrollY <= 2560) {
         setLinkActive("work");
+      } else if (window.scrollY >= 3000 && window.scrollY <= 3800) {
+        setLinkActive("about");
+      } else if (window.scrollY >= 3801) {
+        setLinkActive("contact");
       }
-      // } else if (window.scrollY >= 2561 && window.scrollY <= 3000) {
-      //   setLinkActive("about");
-      // } else if (window.scrollY >= 3001) {
-      //   setLinkActive("contact");
-      // }
+      console.log(window.scrollY);
     };
 
     window.document.addEventListener("scroll", scrollTrigger);
@@ -44,16 +44,26 @@ const Navbar = () => {
   };
 
   return (
-    <header className="w-full z-50 py-[8px] px-[24px] sticky top-0  bg-gradient-to-b from-[#100E17]">
+    <header className="w-full z-50 py-[8px] px-[24px] sticky top-0 bg-gradient-to-b from-[#100E17]">
       <nav className="flex items-center justify-between relative ">
-        <div className="flex items-center ">
-          <ChevronLeftIcon className=" text-primary-mainDark text-[32px] mr-[-4px]" />
-          <h1 className="text-text-primaryDark text-[40px] font-bold">LALA</h1>
-          <span className="text-primary-mainDark  text-[30px] font-medium pl-1"></span>
-          <ChevronLeftIcon className="text-primary-mainDark  rotate-180 text-[32px] ml-[-8px]" />
-        </div>
+        <Link
+          href={navLinks[0].name}
+          passHref
+          key={navLinks[0].name}
+          scroll={false}
+          onClick={() => scrollToElement(navLinks[0].name)}
+        >
+          <div className="flex items-center z-[999]">
+            <ChevronLeftIcon className=" text-primary-mainDark text-[32px] mr-[-4px]" />
+            <h1 className="text-text-primaryDark text-[40px] font-bold font">
+              LALA
+            </h1>
+            <span className="text-primary-mainDark  text-[30px] font-medium pl-1"></span>
+            <ChevronLeftIcon className="text-primary-mainDark  rotate-180 text-[32px] ml-[-8px]" />
+          </div>
+        </Link>
 
-        <div className="flex items-center py-[8px] px-[8px] gap-5 ease-in hover:transition-all duration-100 sm:hidden">
+        <div className="flex items-center py-[8px] px-[8px] gap-5 ease-in hover:transition-all duration-100 sm:hidden ">
           {navLinks.map((link: any) => (
             <Link
               href={link.hrefLink}
@@ -65,7 +75,7 @@ const Navbar = () => {
               <button className="flex  items-center ">
                 <p
                   className="text-[22px] font-bold hover:opacity-60 opacity-40 capitalize"
-                  style={{ opacity: linkActive === link.name ? ".8" : "" }}
+                  style={{ opacity: linkActive === link.name ? "1" : "" }}
                 >
                   {link.name === "#" ? "start" : link.name}
                 </p>
@@ -84,15 +94,14 @@ const Navbar = () => {
         >
           {!popUpSidebar && <MenuIcon />}
         </button>
-        {popUpSidebar && (
-          <SideBar
-            setPopUpSidebar={setPopUpSidebar}
-            linkActive={linkActive}
-            scrollToElement={scrollToElement}
-            navLinks={navLinks}
-          />
-        )}
       </nav>
+      <SideBar
+        setPopUpSidebar={setPopUpSidebar}
+        linkActive={linkActive}
+        scrollToElement={scrollToElement}
+        navLinks={navLinks}
+        popUpSidebar={popUpSidebar}
+      />
     </header>
   );
 };

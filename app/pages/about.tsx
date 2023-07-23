@@ -50,9 +50,9 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="bg-[#14121c] md:px-[16px]">
+    <section id="about" className=" bg-[#14121c]  md:px-[16px]">
       {/* Column Content*/}
-      <div className="absolute pt-[54px] w-full z-1 md:hidden">
+      <div className="absolute pt-[90px] w-full z-1 md:hidden">
         {contentList.map((number) => (
           <p
             key={number}
@@ -73,7 +73,7 @@ const About = () => {
         className="w-full h-full flex flex-col justify-start max-w-[1024px] mx-auto relative"
       >
         <TimelineComponent hightBottom="100%" lineTop={true}>
-          <p className=" text-text-secondaryDark text-[18px] font-light pt-[30px] ">
+          <p className=" text-text-secondaryDark text-[18px] font-light pt-[64px] ">
             About{" />"}
           </p>
 

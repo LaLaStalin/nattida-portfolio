@@ -20,6 +20,7 @@ interface TypeCardWork {
   figmaLink?: figmaType;
   webLink?: any;
   onPopupImgWebsite?: any;
+  nameProject: string;
 }
 
 const CardWork = ({
@@ -33,6 +34,7 @@ const CardWork = ({
   figmaLink,
   webLink,
   onPopupImgWebsite,
+  nameProject,
 }: TypeCardWork) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -57,7 +59,7 @@ const CardWork = ({
     >
       <div className="flex flex-col justify-end z-10 rounded-full">
         <span className="text-[24px] sm:text-[16px] font-bold py-[8px] pr-[8px] w-[120px]">
-          Luna LED
+          {nameProject}
         </span>
         <span className="w-[151.49px] h-[3px] bg-while mt-[8px] mb-[12px]" />
         <p className="text-[14px] text-text-secondaryDark font-robotoMono">
@@ -88,7 +90,7 @@ const CardWork = ({
       />
 
       <motion.div
-        animate={{ translateX: hoveringCard === indexCard ? 0 : -100 }}
+        animate={{ translateX: hoveringCard === indexCard ? 0 : -140 }}
         className={`flex flex-col px-2 gap-[8px] z-[2] cursor-pointer`}
       >
         {toolList.map((tool) => (
