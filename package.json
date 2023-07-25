@@ -24,11 +24,16 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-scroll": "^1.8.9",
+    "react-slick": "^0.29.0",
+    "react-typed": "^1.2.0",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^10.0.4",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
   },
   "devDependencies": {
     "@iconify/react": "^4.1.1",
-    "@types/react-scroll": "^1.8.7"
+    "@types/react-scroll": "^1.8.7",
+    "@types/react-slick": "^0.23.10"
   }
 }

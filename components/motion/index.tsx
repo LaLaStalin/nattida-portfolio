@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useTransform } from "framer-motion";
 
-export function CardMotion() {
+export function cardMotion() {
   const x = useMotionValue(200);
   const y = useMotionValue(200);
 

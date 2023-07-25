@@ -4,7 +4,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const SideBar = ({
+const sideBar = ({
   setPopUpSidebar,
   linkActive,
   scrollToElement,
@@ -52,4 +52,4 @@ const SideBar = ({
   );
 };
 
-export default SideBar;
+export default sideBar;

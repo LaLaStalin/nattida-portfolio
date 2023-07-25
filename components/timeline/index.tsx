@@ -6,7 +6,7 @@ interface timelineType {
   lineTop?: Boolean;
 }
 
-const TimelineComponent = ({
+const timelineComponent = ({
   children,
   hightBottom,
   lineTop,
@@ -31,4 +31,4 @@ const TimelineComponent = ({
   );
 };
 
-export default TimelineComponent;
+export default timelineComponent;

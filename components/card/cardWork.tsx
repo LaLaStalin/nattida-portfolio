@@ -23,7 +23,7 @@ interface TypeCardWork {
   nameProject: string;
 }
 
-const CardWork = ({
+const cardWork = ({
   imgWidth,
   imgHeight,
   imgSrc,
@@ -54,7 +54,7 @@ const CardWork = ({
       }}
       onHoverStart={() => onHoverCard(indexCard)}
       onHoverEnd={() => onHoverCard("null")}
-      onClick={onPopupImgWebsite}
+      onClick={() => onPopupImgWebsite(indexCard)}
       className="flex relative z-10"
     >
       <div className="flex flex-col justify-end z-10 rounded-full">
@@ -96,20 +96,18 @@ const CardWork = ({
         {toolList.map((tool) => (
           <label
             key={tool}
-            className="text-[12px] font-bold text-primary-mainDark bg-[#7848d934] rounded-[4px] p-1 text-center"
+            className="text-[12px] font-bold text-primary-mainDark bg-[#7848d934] rounded-[4px] p-1 text-center hover:bg-[#7848d98d] hover:text-while "
           >
             {tool}
           </label>
         ))}
         {figmaLink && (
-          <Link href={figmaLink.link} target="_blank">
-            <label className="text-[12px] font-bold text-primary-mainDark bg-[#7848d934] rounded-[4px] py-1 px-4 text-center">
-              {figmaLink.name}
-            </label>
-          </Link>
+          <label className="text-[12px] font-bold text-primary-mainDark bg-[#7848d934] rounded-[4px] py-1 px-4 text-center hover:bg-[#7848d98d] hover:text-while">
+            {figmaLink.name}
+          </label>
         )}
       </motion.div>
     </motion.div>
   );
 };
-export default CardWork;
+export default cardWork;

@@ -6,7 +6,7 @@ import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
 import { SideBar } from "../index";
 
-const Navbar = () => {
+const navbar = () => {
   const [linkActive, setLinkActive] = useState<string>("#");
   const [popUpSidebar, setPopUpSidebar] = useState<Boolean>(false);
 
@@ -28,7 +28,7 @@ const Navbar = () => {
       } else if (window.scrollY >= 3801) {
         setLinkActive("contact");
       }
-      console.log(window.scrollY);
+      // console.log(window.scrollY);
     };
 
     window.document.addEventListener("scroll", scrollTrigger);
@@ -106,4 +106,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default navbar;

@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CardMotion, CardWork, TimelineComponent } from "@/components";
+import { TimelineComponent } from "@/components";
 import Work from "./pages/work";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import Link from "next/link";
 import CodeIcon from "@mui/icons-material/Code";
+import { motion } from "framer-motion";
+import Typed from "react-typed";
 
 export default function Home() {
   const [nameTyping, setNameTyping] = useState<string>(
@@ -54,7 +56,7 @@ export default function Home() {
             <p className=" text-text-secondaryDark text-[18px] w-[fit-content] font-light pb-[16px]">
               Start{" />"}
             </p>
-            <div className="flex pt-[16px] flex-wrap text-[38px] sm:text-[28px]">
+            <motion.div className="flex pt-[16px] flex-wrap text-[38px] sm:text-[28px]">
               <h1 className="text-text-primaryDark  font-bold">
                 Hi, my name is&nbsp;
               </h1>
@@ -62,21 +64,29 @@ export default function Home() {
                 Nattida Jangpipatnavakij
                 <span className="opacity-0">exceed</span>
               </div>
-            </div>
+            </motion.div>
             <div className="flex pb-[16px] text-[36px] sm:text-[24px]">
               <p className="text-text-primaryDark  font-bold">i&nbsp;</p>
-              <p className="text-text-primaryDark font-light italic  font-palatino">
+              <p className="text-text-primaryDark font-light italic font-palatino">
                 design&nbsp;
               </p>
-              <p className="text-text-primaryDark  font-bold">
-                and develop&nbsp;
-              </p>
-              <p className="text-text-primaryDark font-bold">website</p>
+              <p className="text-text-primaryDark  font-bold">and&nbsp;</p>
+              <Typed
+                className="text-text-primaryDark font-bold"
+                strings={[
+                  "front-end developer",
+                  "web developer",
+                  "uxui developer",
+                  "front-end developer",
+                ]}
+                typeSpeed={30}
+                backSpeed={50}
+              />
             </div>
             <p className="text-text-secondaryDark text-[24px] font-normal my-[8px] pb-[16px]">
               Let me show You...
             </p>
-            <Link href="/assets/nattida -resume-front-end.pdf" target="_blank">
+            <Link href="/assets/nattida-resume-front-end.pdf" target="_blank">
               <button className="btn">Download Resume</button>
             </Link>
 

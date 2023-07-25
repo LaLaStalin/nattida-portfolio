@@ -174,3 +174,38 @@ html{scroll-behavior: smooth;}
     background-position: 0 0;
   }
 }
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #9c9c9c00;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #929292;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #767676;
+  border-radius: 10px;
+}
+
+
+circle,
+rect,
+line {
+  stroke-width: 12px;
+  stroke-linecap: round;
+  fill: transparent;
+}
+

@@ -1,21 +1,40 @@
-import { CardWork, TimelineComponent } from "@/components";
+import { CardWork, TimelineComponent, WorkContent } from "@/components";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import {
+  foodInfo,
+  foodImg,
+  lunaInfo,
+  lunaImg,
+  melloInfo,
+  melloImg,
+  portfolioInfo,
+  portfolioImg,
+  bakeryInfo,
+  bakeryImg,
+  foodResponsiveInfo,
+  foodResponsiveImg,
+  portResponsiveInfo,
+  portResponsiveImg,
+} from "../../constant";
 
 const Work = () => {
   const [hoveringCard, setHoveringCard] = useState<string>("");
   const [showUpSliderImg, setShowUpSliderImg] = useState<boolean>(false);
+  const [indexCardWork, setIndexCardWork] = useState<string>("");
 
   const onHoverCard = (cardIndex: string) => {
     setHoveringCard(cardIndex);
   };
 
   const onPopupImgWebsite = (cardIndex: string) => {
+    setIndexCardWork(cardIndex);
     setShowUpSliderImg(true);
   };
 
   const onCloseImgWebsite = () => {
     setShowUpSliderImg(false);
+    setIndexCardWork("null");
   };
 
   return (
@@ -26,7 +45,7 @@ const Work = () => {
         // style={ background-color:linear-gradient(-180deg, #1a1527, #0e0c16 88%, #0e0c16 99%)}
       >
         <div className="absolute right-0 top-10 z-[1]">
-          <h1 className="text-[#221d35] font-bold text-[200px] sm:hidden ">
+          <h1 className="text-[#221d35] font-bold text-[200px] md:hidden ">
             WEB
           </h1>
         </div>
@@ -40,6 +59,7 @@ const Work = () => {
             </p>
 
             {/* Card Work - WEB*/}
+            {/* Food recipe Center */}
             <div className="flex z-20 md:flex-col md:gap-[40px]">
               <div className="ml-[-200px] px-[16px] md:ml-0 ">
                 <CardWork
@@ -61,6 +81,17 @@ const Work = () => {
                   onPopupImgWebsite={onPopupImgWebsite}
                 />
               </div>
+              {indexCardWork === "00" && (
+                <WorkContent
+                  onPopupImgWebsite={onPopupImgWebsite}
+                  onCloseImgWebsite={onCloseImgWebsite}
+                  showUpSliderImg={showUpSliderImg}
+                  imgList={foodImg}
+                  info={foodInfo}
+                />
+              )}
+
+              {/* Luna LED */}
               <div className="px-[16px] md:px-0 mt-[260px] ml-[-100px] md:m-0">
                 <CardWork
                   indexCard="01"
@@ -77,10 +108,21 @@ const Work = () => {
                     "Material UI",
                   ]}
                   figmaLink={{ name: "Figma", link: "#" }}
+                  onPopupImgWebsite={onPopupImgWebsite}
                 />
               </div>
+              {indexCardWork === "01" && (
+                <WorkContent
+                  onPopupImgWebsite={onPopupImgWebsite}
+                  onCloseImgWebsite={onCloseImgWebsite}
+                  showUpSliderImg={showUpSliderImg}
+                  imgList={lunaImg}
+                  info={lunaInfo}
+                />
+              )}
 
-              <div className="px-[16px] md:px-0 mt-[100px] ml-[100px] mr-[-100px] md:mx-0">
+              {/* MELLO */}
+              <div className="px-[16px] md:px-0 mt-[100px] md:mt-0 ml-[100px] mr-[-100px] md:mx-0">
                 <CardWork
                   indexCard="02"
                   imgWidth={230}
@@ -91,11 +133,22 @@ const Work = () => {
                   hoveringCard={hoveringCard}
                   toolList={["C#", "Firebase"]}
                   figmaLink={{ name: "Figma", link: "#" }}
+                  onPopupImgWebsite={onPopupImgWebsite}
                 />
               </div>
             </div>
+            {indexCardWork === "02" && (
+              <WorkContent
+                onPopupImgWebsite={onPopupImgWebsite}
+                onCloseImgWebsite={onCloseImgWebsite}
+                showUpSliderImg={showUpSliderImg}
+                imgList={melloImg}
+                info={melloInfo}
+              />
+            )}
 
             {/* WEB - row 2 */}
+            {/* Portfolio */}
             <div className="flex z-20 md:flex-col md:gap-[40px] mt-[40px]">
               <div className="px-[16px] md:px-0 ml-[-160px] md:ml-0 ">
                 <CardWork
@@ -113,8 +166,20 @@ const Work = () => {
                     "Material UI",
                   ]}
                   figmaLink={{ name: "Figma", link: "#" }}
+                  onPopupImgWebsite={onPopupImgWebsite}
                 />
               </div>
+              {indexCardWork === "03" && (
+                <WorkContent
+                  onPopupImgWebsite={onPopupImgWebsite}
+                  onCloseImgWebsite={onCloseImgWebsite}
+                  showUpSliderImg={showUpSliderImg}
+                  imgList={portfolioImg}
+                  info={portfolioInfo}
+                />
+              )}
+
+              {/* Bakery Material */}
               <div className="px-[16px] md:px-0 ml-[200px] mt-[120px] md:m-0">
                 <CardWork
                   indexCard="04"
@@ -125,13 +190,24 @@ const Work = () => {
                   onHoverCard={onHoverCard}
                   hoveringCard={hoveringCard}
                   toolList={["C#", "VScode 2019"]}
+                  onPopupImgWebsite={onPopupImgWebsite}
                 />
               </div>
             </div>
+            {indexCardWork === "04" && (
+              <WorkContent
+                onPopupImgWebsite={onPopupImgWebsite}
+                onCloseImgWebsite={onCloseImgWebsite}
+                showUpSliderImg={showUpSliderImg}
+                imgList={bakeryImg}
+                info={bakeryInfo}
+              />
+            )}
 
             {/* WEB - row 3 */}
+            {/* Food Recipe Center (responsive) */}
             <div className="flex z-20 md:flex-col md:gap-[40px]">
-              <div className="px-[16px]">
+              <div className="px-[16px] md:mt-[80px]">
                 <CardWork
                   indexCard="05"
                   imgWidth={230}
@@ -147,9 +223,21 @@ const Work = () => {
                     "PHP",
                     "MySQL",
                   ]}
+                  onPopupImgWebsite={onPopupImgWebsite}
                 />
               </div>
-              <div className="px-[16px] md:px-0 mt-[100px] ml-[180px]  md:mx-0">
+              {indexCardWork === "05" && (
+                <WorkContent
+                  onPopupImgWebsite={onPopupImgWebsite}
+                  onCloseImgWebsite={onCloseImgWebsite}
+                  showUpSliderImg={showUpSliderImg}
+                  imgList={foodResponsiveImg}
+                  info={foodResponsiveInfo}
+                />
+              )}
+
+              {/* Portfolio (responsive) */}
+              <div className="px-[16px] md:px-0 mt-[100px] md:mt-0 ml-[180px]  md:mx-0">
                 <CardWork
                   indexCard="06"
                   imgWidth={230}
@@ -164,9 +252,19 @@ const Work = () => {
                     "TypeScript",
                     "Material UI",
                   ]}
+                  onPopupImgWebsite={onPopupImgWebsite}
                 />
               </div>
             </div>
+            {indexCardWork === "06" && (
+              <WorkContent
+                onPopupImgWebsite={onPopupImgWebsite}
+                onCloseImgWebsite={onCloseImgWebsite}
+                showUpSliderImg={showUpSliderImg}
+                imgList={portResponsiveImg}
+                info={portResponsiveInfo}
+              />
+            )}
 
             {/* Video */}
             <div className="mt-[80px]">
