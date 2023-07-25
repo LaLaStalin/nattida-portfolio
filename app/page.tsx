@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { TimelineComponent } from "@/components";
+import { Loading, TimelineComponent } from "@/components";
 import Work from "./pages/work";
 import About from "./pages/about";
 import Contact from "./pages/contact";
@@ -11,9 +11,7 @@ import { motion } from "framer-motion";
 import Typed from "react-typed";
 
 export default function Home() {
-  const [nameTyping, setNameTyping] = useState<string>(
-    "Nattida Jangpipatnavakij"
-  );
+  const [onLoad, setOnLoad] = useState<boolean>(true);
 
   useEffect(() => {
     let innerCursor: any = document.querySelector(".inner-cursor");
@@ -27,6 +25,12 @@ export default function Home() {
       outerCursor.style.left = `${x}px`;
       outerCursor.style.top = `${y}px`;
     };
+
+    useEffect(() => {
+      setTimeout(() => {
+        setOnLoad(false);
+      }, 1500);
+    }, []);
 
     document.addEventListener("mousemove", moveCursor);
     let links = Array.from(document.querySelectorAll("p"));
@@ -112,17 +116,23 @@ export default function Home() {
 
   return (
     <main className="relative">
-      {/* Home Section */}
-      {homeSection()}
+      {onLoad ? (
+        <Loading />
+      ) : (
+        <>
+          {/* Home Section */}
+          {homeSection()}
 
-      {/* Work Section */}
-      <Work />
+          {/* Work Section */}
+          <Work />
 
-      {/* About Section */}
-      <About />
+          {/* About Section */}
+          <About />
 
-      {/* Contact Section */}
-      <Contact />
+          {/* Contact Section */}
+          <Contact />
+        </>
+      )}
 
       {/* Cursor */}
       <span className="inner-cursor"></span>
