@@ -26,12 +26,6 @@ export default function Home() {
       outerCursor.style.top = `${y}px`;
     };
 
-    useEffect(() => {
-      setTimeout(() => {
-        setOnLoad(false);
-      }, 1500);
-    }, []);
-
     document.addEventListener("mousemove", moveCursor);
     let links = Array.from(document.querySelectorAll("p"));
     links.map((i) => {
@@ -42,6 +36,13 @@ export default function Home() {
         innerCursor.classList.remove("grow");
       });
     });
+  }, []);
+
+  // Loading
+  useEffect(() => {
+    setTimeout(() => {
+      setOnLoad(false);
+    }, 1500);
   }, []);
 
   const scrollToElement = (path: string) => {
