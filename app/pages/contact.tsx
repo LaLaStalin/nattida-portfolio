@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 const Contact = () => {
   const contactList = [
     {
-      href: "www.linkedin.com/in/nattidajang",
+      href: "https://www.linkedin.com/in/nattidajang/",
       icon: "basil:linkedin-solid",
       name: "in/nattidajang",
     },
@@ -31,7 +31,7 @@ const Contact = () => {
       name: "Samut Prakan, Thailand",
     },
     {
-      href: "",
+      href: "www.linkedin.com/in/nattidajang",
       icon: "material-symbols:alternate-email",
       name: "nattida.jangpipat@gmail.com",
     },
@@ -83,15 +83,18 @@ const Contact = () => {
                 />
                 {contactList[4].name}
               </button>
-              <button className="text-text-secondaryDark text-[16px] p-[8px] ml-[-8px] flex lfex items-center gap-2 hover:bg-[#5a18df0f] rounded-[8px]">
-                <Icon
-                  icon={contactList[5].icon}
-                  className="text-primary-mainDark"
-                  width="32"
-                  height="32"
-                />
-                {contactList[5].name}
-              </button>
+
+              <Link href={contactList[5].href} target="_blank">
+                <button className="text-text-secondaryDark text-[16px] p-[8px] ml-[-8px] flex lfex items-center gap-2 hover:bg-[#5a18df0f] rounded-[8px]">
+                  <Icon
+                    icon={contactList[5].icon}
+                    className="text-primary-mainDark"
+                    width="32"
+                    height="32"
+                  />
+                  {contactList[5].name}
+                </button>
+              </Link>
             </div>
           </div>
 
