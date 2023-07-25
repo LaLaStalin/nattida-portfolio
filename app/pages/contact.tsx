@@ -16,11 +16,6 @@ const Contact = () => {
     },
 
     {
-      href: "",
-      icon: "material-symbols:alternate-email",
-      name: "nattida.jangpipat@gmail.com",
-    },
-    {
       href: "https://github.com/LaLaStalin",
       icon: "mdi:github",
       name: "github.com/LaLaStalin",
@@ -34,6 +29,11 @@ const Contact = () => {
       href: "",
       icon: "mdi:location",
       name: "Samut Prakan, Thailand",
+    },
+    {
+      href: "",
+      icon: "material-symbols:alternate-email",
+      name: "nattida.jangpipat@gmail.com",
     },
   ];
 
@@ -51,7 +51,7 @@ const Contact = () => {
               Find me on:
             </h1>
             <div className="grid grid-cols-3 gap-[16px] md:grid-cols-2 sm:grid-cols-1">
-              {contactList.map((contact) => (
+              {contactList.slice(0, 3).map((contact) => (
                 <Link href={contact.href} target="_blank" key={contact.name}>
                   <button className="text-text-secondaryDark text-[16px] p-[8px] ml-[-8px] flex lfex items-center gap-2 hover:bg-[#5a18df0f] rounded-[8px]">
                     <Icon
@@ -64,13 +64,45 @@ const Contact = () => {
                   </button>
                 </Link>
               ))}
+
+              <button className="text-text-secondaryDark text-[16px] p-[8px] ml-[-8px] flex lfex items-center gap-2 hover:bg-[#5a18df0f] rounded-[8px]">
+                <Icon
+                  icon={contactList[3].icon}
+                  className="text-primary-mainDark"
+                  width="32"
+                  height="32"
+                />
+                {contactList[3].name}
+              </button>
+              <button className="text-text-secondaryDark text-[16px] p-[8px] ml-[-8px] flex lfex items-center gap-2 hover:bg-[#5a18df0f] rounded-[8px]">
+                <Icon
+                  icon={contactList[4].icon}
+                  className="text-primary-mainDark"
+                  width="32"
+                  height="32"
+                />
+                {contactList[4].name}
+              </button>
+              <button className="text-text-secondaryDark text-[16px] p-[8px] ml-[-8px] flex lfex items-center gap-2 hover:bg-[#5a18df0f] rounded-[8px]">
+                <Icon
+                  icon={contactList[5].icon}
+                  className="text-primary-mainDark"
+                  width="32"
+                  height="32"
+                />
+                {contactList[5].name}
+              </button>
             </div>
           </div>
-          <p className="text-[12px] text-text-secondaryDark pb-[8px]">
-            {
-              "© Made with </> by LaLa. Thailand 2023. reference desgin: https://yasio.dev"
-            }
-          </p>
+
+          <div className="flex w-full justify-between items-end">
+            <p className="text-[12px] text-text-secondaryDark pb-[8px]">
+              {
+                "© Made with </> by LaLa. Thailand 2023. reference desgin: https://yasio.dev"
+              }
+            </p>
+            <span className="loader mr-[-300px] md:mr-[-200px] sm:mr-[0px]"></span>
+          </div>
         </TimelineComponent>
       </div>
     </section>

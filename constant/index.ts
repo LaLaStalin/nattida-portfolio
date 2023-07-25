@@ -98,7 +98,7 @@ const portfolioInfo: InfoObject = {
     programming: "HTML, CSS , JavaScript, Next.js, Typescript, Tailwind, Material UI, Motion",
     github: "https://github.com/LaLaStalin/nattida-portfolio",
     figma: null,
-    visit: "https://nattida-portfolio-test.vercel.app/",
+    visit: "#",
 }
 
 const portfolioImg = [
@@ -175,7 +175,7 @@ const portResponsiveInfo: InfoObject = {
     programming: "HTML, CSS , JavaScript, Next.js, Typescript, Tailwind, Material UI, Motion",
     github: "https://github.com/LaLaStalin/nattida-portfolio",
     figma: null,
-    visit: "https://nattida-portfolio-test.vercel.app/",
+    visit: "#",
 }
 
 const portResponsiveImg = [

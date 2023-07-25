@@ -2,7 +2,7 @@
 
 import EastIcon from "@mui/icons-material/East";
 import { useMotionValue, useTransform, motion } from "framer-motion";
-import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface figmaType {
   name: string;
@@ -36,13 +36,36 @@ const cardWork = ({
   onPopupImgWebsite,
   nameProject,
 }: TypeCardWork) => {
+  const [animationOn, setAnimationOn] = useState<boolean>(false);
+
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const rotateX = useTransform(y, [-100, 100], [30, -30]);
   const rotateY = useTransform(x, [-100, 100], [-30, 30]);
 
+  useEffect(() => {
+    const scrollTrigger = (e: any) => {
+      if (window.scrollY >= 0 && window.scrollY <= 600) {
+        setAnimationOn(false);
+      } else if (window.scrollY >= 601 && window.scrollY <= 2000) {
+        setAnimationOn(true);
+      } else if (window.scrollY > 2000) {
+        setAnimationOn(false);
+      }
+    };
+
+    window.document.addEventListener("scroll", scrollTrigger);
+
+    return () => {
+      window.removeEventListener("scroll", scrollTrigger);
+    };
+  }, []);
+
   return (
     <motion.div
+      initial={{ x: animationOn ? 20 : 0, opacity: animationOn ? 0 : 1 }}
+      animate={{ x: animationOn ? 0 : 20, opacity: animationOn ? 1 : 0 }}
+      transition={{ duration: 0.8 }}
       style={{ x, y, rotateX, rotateY, z: 100 }}
       drag
       dragElastic={0.18}
