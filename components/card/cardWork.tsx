@@ -49,9 +49,10 @@ const cardWork = ({
         setAnimationOn(false);
       } else if (window.scrollY >= 601 && window.scrollY <= 2000) {
         setAnimationOn(true);
-      } else if (window.scrollY > 2000) {
-        setAnimationOn(false);
       }
+      // } else if (window.scrollY > 2000) {
+      //   setAnimationOn(false);
+      // }
     };
 
     window.document.addEventListener("scroll", scrollTrigger);
