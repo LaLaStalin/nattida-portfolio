@@ -1,6 +1,7 @@
 "use client";
 
 import EastIcon from "@mui/icons-material/East";
+import { useMediaQuery } from "@mui/material";
 import { useMotionValue, useTransform, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -37,6 +38,7 @@ const cardWork = ({
   nameProject,
 }: TypeCardWork) => {
   const [animationOn, setAnimationOn] = useState<boolean>(false);
+  const matches = useMediaQuery("(max-width:600px)");
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -67,10 +69,6 @@ const cardWork = ({
       initial={{ x: animationOn ? 20 : 0, opacity: animationOn ? 0 : 1 }}
       animate={{ x: animationOn ? 0 : 20, opacity: animationOn ? 1 : 0 }}
       transition={{ duration: 0.8 }}
-      style={{ x, y, rotateX, rotateY, z: 100 }}
-      drag
-      dragElastic={0.18}
-      dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
       whileTap={{ cursor: "grabbing" }}
       whileHover={{
         scale: 1.15,
@@ -79,9 +77,9 @@ const cardWork = ({
       onHoverStart={() => onHoverCard(indexCard)}
       onHoverEnd={() => onHoverCard("null")}
       onClick={() => onPopupImgWebsite(indexCard)}
-      className="flex relative z-10 ${matches}"
+      className="flex relative"
     >
-      <div className="flex flex-col justify-end z-10 rounded-full">
+      <div className="flex flex-col justify-end z-[20] rounded-full">
         <span className="text-[24px] sm:text-[16px] font-bold py-[8px] pr-[8px] w-[120px]">
           {nameProject}
         </span>
@@ -107,7 +105,7 @@ const cardWork = ({
         height={imgHeight}
         className="ml-[-80px] sm:w-[220px]  hover:shadow-lg hover:shadow-[#000] z-[3]"
         style={{ x, y, rotateX, rotateY, z: 100 }}
-        drag
+        drag={!matches ? true : false}
         dragElastic={0.18}
         dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
         whileTap={{ cursor: "grabbing" }}
