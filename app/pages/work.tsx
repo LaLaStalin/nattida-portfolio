@@ -24,6 +24,7 @@ const Work = () => {
   const [showUpSliderImg, setShowUpSliderImg] = useState<boolean>(false);
   const [indexCardWork, setIndexCardWork] = useState<string>("");
   const matches = useMediaQuery("(max-width:600px)");
+  const [animationOn, setAnimationOn] = useState<boolean>(false);
 
   const scrollToTop = () => {
     window.scroll({ top: 0, left: 0, behavior: "smooth" });
@@ -34,12 +35,14 @@ const Work = () => {
   };
 
   const onPopupImgWebsite = (cardIndex: string) => {
-    if (matches) scrollToTop();
+    // if (matches) scrollToTop();
+    setAnimationOn(true);
     setIndexCardWork(cardIndex);
     setShowUpSliderImg(true);
   };
 
   const onCloseImgWebsite = () => {
+    setAnimationOn(false);
     setShowUpSliderImg(false);
     setIndexCardWork("null");
   };
@@ -56,7 +59,10 @@ const Work = () => {
             WEB
           </h1>
         </div>
-        <div className="w-full h-full flex flex-col justify-start max-w-[1024px] mx-auto z-20">
+        <motion.div
+          className="w-full h-full flex flex-col justify-start max-w-[1024px] mx-auto z-20"
+          animate={{ opacity: animationOn ? 0 : 1 }}
+        >
           <TimelineComponent hightBottom="100%" lineTop={true}>
             <p className=" text-text-secondaryDark text-[18px] font-light pt-[68px] z-10">
               Work{" />"}
@@ -67,7 +73,7 @@ const Work = () => {
 
             {/* Card Work - WEB*/}
             {/* Food recipe Center */}
-            <div className="flex  md:flex-col md:gap-[40px]">
+            <div className="flex  md:flex-col md:gap-[40px] ">
               <div className="ml-[-200px] px-[16px] md:ml-0 ">
                 <CardWork
                   indexCard="00"
@@ -291,7 +297,7 @@ const Work = () => {
               />
             </motion.div>
           </TimelineComponent>
-        </div>
+        </motion.div>
       </section>
     </>
   );
