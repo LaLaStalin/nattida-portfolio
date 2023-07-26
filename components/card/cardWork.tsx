@@ -105,7 +105,7 @@ const cardWork = ({
         alt="cob-circlr-100w"
         width={imgWidth}
         height={imgHeight}
-        className="ml-[-80px] sm:w-[220px]  hover:shadow-lg hover:shadow-[#000] z-[8]"
+        className="ml-[-80px] sm:w-[220px]  hover:shadow-lg hover:shadow-[#000] z-[3]"
         style={{ x, y, rotateX, rotateY, z: 100 }}
         drag
         dragElastic={0.18}
