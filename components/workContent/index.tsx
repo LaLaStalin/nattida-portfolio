@@ -79,6 +79,7 @@ const workContent = ({
       aria-labelledby="customized-dialog-title"
       open={showUpSliderImg}
       maxWidth="md"
+      className="z-[999]"
     >
       <BootstrapDialogTitle
         id="customized-dialog-title"
@@ -86,7 +87,7 @@ const workContent = ({
       >
         Project
       </BootstrapDialogTitle>
-      <div className="flex">
+      <div className="flex ">
         <section className="h-[500px] w-[560px]  bg-[#fff]">
           <Swiper
             // install Swiper modules
