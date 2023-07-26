@@ -23,7 +23,7 @@ const Work = () => {
   const [hoveringCard, setHoveringCard] = useState<string>("");
   const [showUpSliderImg, setShowUpSliderImg] = useState<boolean>(false);
   const [indexCardWork, setIndexCardWork] = useState<string>("");
-  const matches = useMediaQuery("(max-width:600px)");
+  const matches = useMediaQuery("(max-width:1023px)");
   const [animationOn, setAnimationOn] = useState<boolean>(false);
 
   const scrollToTop = () => {
@@ -36,7 +36,7 @@ const Work = () => {
 
   const onPopupImgWebsite = (cardIndex: string) => {
     // if (matches) scrollToTop();
-    setAnimationOn(true);
+    if (matches) setAnimationOn(true);
     setIndexCardWork(cardIndex);
     setShowUpSliderImg(true);
   };
