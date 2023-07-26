@@ -67,7 +67,7 @@ const Work = () => {
 
             {/* Card Work - WEB*/}
             {/* Food recipe Center */}
-            <div className="flex z-20 md:flex-col md:gap-[40px]">
+            <div className="flex  md:flex-col md:gap-[40px]">
               <div className="ml-[-200px] px-[16px] md:ml-0 ">
                 <CardWork
                   indexCard="00"
@@ -156,7 +156,7 @@ const Work = () => {
 
             {/* WEB - row 2 */}
             {/* Portfolio */}
-            <div className="flex z-20 md:flex-col md:gap-[40px] mt-[40px]">
+            <div className="flex  md:flex-col md:gap-[40px] mt-[40px]">
               <div className="px-[16px] md:px-0 ml-[-160px] md:ml-0 ">
                 <CardWork
                   indexCard="03"
@@ -187,7 +187,7 @@ const Work = () => {
               )}
 
               {/* Bakery Material */}
-              <div className="px-[16px] md:px-0 ml-[200px] mt-[120px] md:m-0">
+              <div className="px-[16px]  md:px-0 ml-[200px] mt-[120px] md:m-0">
                 <CardWork
                   indexCard="04"
                   imgWidth={410}
@@ -213,7 +213,7 @@ const Work = () => {
 
             {/* WEB - row 3 */}
             {/* Food Recipe Center (responsive) */}
-            <div className="flex z-20 md:flex-col md:gap-[40px]">
+            <div className="flex  md:flex-col md:gap-[40px]">
               <div className="px-[16px] md:mt-[80px]">
                 <CardWork
                   indexCard="05"
