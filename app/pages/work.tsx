@@ -143,16 +143,16 @@ const Work = () => {
                   onPopupImgWebsite={onPopupImgWebsite}
                 />
               </div>
+              {indexCardWork === "02" && (
+                <WorkContent
+                  onPopupImgWebsite={onPopupImgWebsite}
+                  onCloseImgWebsite={onCloseImgWebsite}
+                  showUpSliderImg={showUpSliderImg}
+                  imgList={melloImg}
+                  info={melloInfo}
+                />
+              )}
             </div>
-            {indexCardWork === "02" && (
-              <WorkContent
-                onPopupImgWebsite={onPopupImgWebsite}
-                onCloseImgWebsite={onCloseImgWebsite}
-                showUpSliderImg={showUpSliderImg}
-                imgList={melloImg}
-                info={melloInfo}
-              />
-            )}
 
             {/* WEB - row 2 */}
             {/* Portfolio */}
@@ -200,16 +200,16 @@ const Work = () => {
                   onPopupImgWebsite={onPopupImgWebsite}
                 />
               </div>
+              {indexCardWork === "04" && (
+                <WorkContent
+                  onPopupImgWebsite={onPopupImgWebsite}
+                  onCloseImgWebsite={onCloseImgWebsite}
+                  showUpSliderImg={showUpSliderImg}
+                  imgList={bakeryImg}
+                  info={bakeryInfo}
+                />
+              )}
             </div>
-            {indexCardWork === "04" && (
-              <WorkContent
-                onPopupImgWebsite={onPopupImgWebsite}
-                onCloseImgWebsite={onCloseImgWebsite}
-                showUpSliderImg={showUpSliderImg}
-                imgList={bakeryImg}
-                info={bakeryInfo}
-              />
-            )}
 
             {/* WEB - row 3 */}
             {/* Food Recipe Center (responsive) */}
@@ -262,16 +262,16 @@ const Work = () => {
                   onPopupImgWebsite={onPopupImgWebsite}
                 />
               </div>
+              {indexCardWork === "06" && (
+                <WorkContent
+                  onPopupImgWebsite={onPopupImgWebsite}
+                  onCloseImgWebsite={onCloseImgWebsite}
+                  showUpSliderImg={showUpSliderImg}
+                  imgList={portResponsiveImg}
+                  info={portResponsiveInfo}
+                />
+              )}
             </div>
-            {indexCardWork === "06" && (
-              <WorkContent
-                onPopupImgWebsite={onPopupImgWebsite}
-                onCloseImgWebsite={onCloseImgWebsite}
-                showUpSliderImg={showUpSliderImg}
-                imgList={portResponsiveImg}
-                info={portResponsiveInfo}
-              />
-            )}
 
             {/* Video */}
             <div className="mt-[80px]">
