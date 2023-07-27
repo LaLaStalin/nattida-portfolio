@@ -91,7 +91,7 @@ export default function Home() {
             <p className="text-text-secondaryDark text-[24px] font-normal my-[8px] pb-[16px]">
               Let me show You...
             </p>
-            <Link href="/assets/nattida-resume-front-end.pdf" target="_blank">
+            <Link href="/assets/nattida-cv-front-end.pdf" target="_blank">
               <button className="btn">Download Resume</button>
             </Link>
 
