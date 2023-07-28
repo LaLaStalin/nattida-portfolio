@@ -79,7 +79,7 @@ const cardWork = ({
       onClick={() => onPopupImgWebsite(indexCard)}
       className="flex relative"
     >
-      <div className="flex flex-col justify-end z-[20] rounded-full">
+      <div className="flex flex-col justify-end z-[20] rounded-full ">
         <span className="text-[24px] sm:text-[16px] font-bold py-[8px] pr-[8px] w-[120px]">
           {nameProject}
         </span>

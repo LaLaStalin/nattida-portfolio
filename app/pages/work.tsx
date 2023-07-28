@@ -54,7 +54,7 @@ const Work = () => {
         className=" px-[16px] relative h-full md:h-full bg-[#1a1527] bg-gradient-to-b from-[#1a1527] to-[#0e0c16]"
         // style={ background-color:linear-gradient(-180deg, #1a1527, #0e0c16 88%, #0e0c16 99%)}
       >
-        <div className="absolute right-0 top-10 z-[1]">
+        <div className="absolute right-0 top-10 ">
           <h1 className="text-[#221d35] font-bold text-[200px] md:hidden ">
             WEB
           </h1>
@@ -67,7 +67,7 @@ const Work = () => {
             <p className=" text-text-secondaryDark text-[18px] font-light pt-[68px] z-10">
               Work{" />"}
             </p>
-            <p className="text-text-secondaryDark text-[30px] sm:text-[24px] font-semibold tracking-tight pb-[16px] z-10">
+            <p className="text-text-secondaryDark text-[30px] sm:text-[24px] font-semibold tracking-tight pb-[16px] z-[10]">
               Selected web, mobile, video projects...
             </p>
 
