@@ -80,6 +80,7 @@ export default function Home() {
                 className="text-text-primaryDark font-bold"
                 strings={[
                   "front-end developer",
+                  "react developer",
                   "web developer",
                   "uxui developer",
                   "front-end developer",
