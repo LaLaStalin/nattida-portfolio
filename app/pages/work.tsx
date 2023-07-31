@@ -59,6 +59,7 @@ const Work = () => {
             WEB
           </h1>
         </div>
+
         <motion.div
           className="w-full h-full flex flex-col justify-start max-w-[1024px] mx-auto z-20"
           animate={{ opacity: animationOn ? 0 : 1 }}

@@ -2,8 +2,14 @@
 
 import EastIcon from "@mui/icons-material/East";
 import { useMediaQuery } from "@mui/material";
-import { useMotionValue, useTransform, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import {
+  useMotionValue,
+  useTransform,
+  motion,
+  useInView,
+  useAnimation,
+} from "framer-motion";
+import { useEffect, useState, useRef } from "react";
 
 interface figmaType {
   name: string;
@@ -37,7 +43,10 @@ const cardWork = ({
   onPopupImgWebsite,
   nameProject,
 }: TypeCardWork) => {
-  const [animationOn, setAnimationOn] = useState<boolean>(false);
+  const refElements = useRef(null);
+  const isInView = useInView(refElements, { once: true });
+  const mainControls = useAnimation();
+
   const matches = useMediaQuery("(max-width:600px)");
 
   const x = useMotionValue(0);
@@ -46,28 +55,21 @@ const cardWork = ({
   const rotateY = useTransform(x, [-100, 100], [-30, 30]);
 
   useEffect(() => {
-    const scrollTrigger = (e: any) => {
-      if (window.scrollY >= 0 && window.scrollY <= 600) {
-        setAnimationOn(false);
-      } else if (window.scrollY >= 601 && window.scrollY <= 2000) {
-        setAnimationOn(true);
-      }
-      // } else if (window.scrollY > 2000) {
-      //   setAnimationOn(false);
-      // }
-    };
-
-    window.document.addEventListener("scroll", scrollTrigger);
-
-    return () => {
-      window.removeEventListener("scroll", scrollTrigger);
-    };
-  }, []);
+    if (isInView) {
+      // Fine the animation
+      mainControls.start("visible");
+    }
+  }, [isInView]);
 
   return (
     <motion.div
-      initial={{ x: animationOn ? 20 : 0, opacity: animationOn ? 0 : 1 }}
-      animate={{ x: animationOn ? 0 : 20, opacity: animationOn ? 1 : 0 }}
+      ref={refElements}
+      variants={{
+        hidden: { opacity: 0, x: 75 },
+        visible: { opacity: 1, x: 0 },
+      }}
+      initial="hidden"
+      animate={mainControls}
       transition={{ duration: 0.8 }}
       whileTap={{ cursor: "grabbing" }}
       whileHover={{

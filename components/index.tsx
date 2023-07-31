@@ -5,6 +5,7 @@ import SideBar from "./sidebar";
 import { cardMotion } from "./motion";
 import WorkContent from "./workContent";
 import Loading from "./loading";
+import Reveal from "./reveal";
 
 export {
   Navbar,
@@ -14,4 +15,5 @@ export {
   cardMotion,
   WorkContent,
   Loading,
+  Reveal,
 };

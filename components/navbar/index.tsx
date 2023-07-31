@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
 import { SideBar } from "../index";
+import { motion } from "framer-motion";
 
 const navbar = () => {
   const [linkActive, setLinkActive] = useState<string>("#");
@@ -53,14 +54,18 @@ const navbar = () => {
           scroll={false}
           onClick={() => scrollToElement(navLinks[0].name)}
         >
-          <div className="flex items-center z-[999]">
+          <motion.div
+            whileHover={{ scale: [null, 1.4, 1.3] }}
+            transition={{ duration: 0.3 }}
+            className="flex items-center z-[999]"
+          >
             <ChevronLeftIcon className=" text-primary-mainDark text-[32px] mr-[-4px]" />
             <h1 className="text-text-primaryDark text-[40px] font-bold font">
               LALA
             </h1>
             <span className="text-primary-mainDark  text-[30px] font-medium pl-1"></span>
             <ChevronLeftIcon className="text-primary-mainDark  rotate-180 text-[32px] ml-[-8px]" />
-          </div>
+          </motion.div>
         </Link>
 
         <div className="flex items-center py-[8px] px-[8px] gap-5 ease-in hover:transition-all duration-100 sm:hidden ">
@@ -72,7 +77,11 @@ const navbar = () => {
               scroll={false}
               onClick={() => scrollToElement(link.name)}
             >
-              <button className="flex  items-center ">
+              <motion.button
+                whileHover={{ scale: [null, 1.4, 1.3] }}
+                transition={{ duration: 0.3 }}
+                className="flex  items-center "
+              >
                 <p
                   className="text-[22px] font-bold hover:opacity-60 opacity-40 capitalize"
                   style={{ opacity: linkActive === link.name ? "1" : "" }}
@@ -83,17 +92,19 @@ const navbar = () => {
                 <span className="text-[22px]  font-bold opacity-40">
                   {"/>"}
                 </span>
-              </button>
+              </motion.button>
             </Link>
           ))}
         </div>
 
-        <button
+        <motion.button
+          whileHover={{ scale: [null, 1.4, 1.3] }}
+          transition={{ duration: 0.3 }}
           onClick={() => setPopUpSidebar(!popUpSidebar)}
           className="hidden sm:block"
         >
           {!popUpSidebar && <MenuIcon />}
-        </button>
+        </motion.button>
       </nav>
       <SideBar
         setPopUpSidebar={setPopUpSidebar}

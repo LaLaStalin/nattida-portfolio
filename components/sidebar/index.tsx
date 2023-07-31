@@ -17,12 +17,14 @@ const sideBar = ({
       transition={{ type: "spring", stiffness: 50 }}
       className="hidden sm:block absolute top-0 right-0 w-full bg-gradient-to-b from-[#100E17] h-[460px] pt-[40px]"
     >
-      <button
+      <motion.button
+        whileHover={{ scale: [null, 1.4, 1.3] }}
+        transition={{ duration: 0.3 }}
         className="absolute right-[16px] top-[20px]"
         onClick={() => setPopUpSidebar(false)}
       >
         <CloseIcon />
-      </button>
+      </motion.button>
       <div className="flex flex-col items-center justify-center p-[16px] gap-[16px]">
         {navLinks.map((link: any) => (
           <Link
@@ -32,7 +34,9 @@ const sideBar = ({
             scroll={false}
             onClick={() => scrollToElement(link.name)}
           >
-            <button
+            <motion.button
+              whileHover={{ scale: [null, 1.4, 1.3] }}
+              transition={{ duration: 0.3 }}
               className="flex  items-center"
               onClick={() => setPopUpSidebar(false)}
             >
@@ -44,7 +48,7 @@ const sideBar = ({
               </p>
 
               <span className="text-[22px]  font-bold opacity-40">{"/>"}</span>
-            </button>
+            </motion.button>
           </Link>
         ))}
       </div>

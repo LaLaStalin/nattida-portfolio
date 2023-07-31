@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Loading, TimelineComponent } from "@/components";
+import { Loading, TimelineComponent, Reveal } from "@/components";
 import Work from "./pages/work";
 import About from "./pages/about";
 import Contact from "./pages/contact";
@@ -58,42 +58,59 @@ export default function Home() {
       >
         <div className="w-full h-full flex flex-col justify-end max-w-[1024px] mx-auto">
           <TimelineComponent hightBottom="600px">
-            <p className=" text-text-secondaryDark text-[18px] w-[fit-content] font-light pb-[16px]">
-              Start{" />"}
-            </p>
-            <motion.div className="flex pt-[16px] flex-wrap text-[38px] sm:text-[28px]">
-              <h1 className="text-text-primaryDark  font-bold">
-                Hi, my name is&nbsp;
-              </h1>
-              <div className="text-primary-mainDark  font-bold naming-animate ">
-                Nattida Jangpipatnavakij
-                <span className="opacity-0">exceed</span>
-              </div>
-            </motion.div>
-            <div className="flex pb-[16px] text-[36px] sm:text-[24px]">
-              <p className="text-text-primaryDark  font-bold">i&nbsp;</p>
-              <p className="text-text-primaryDark font-light italic font-palatino">
-                design&nbsp;
+            <Reveal bg="#ffffff">
+              <p className=" text-text-secondaryDark text-[18px] w-[fit-content] font-light pb-[16px]">
+                Start{" />"}
               </p>
-              <p className="text-text-primaryDark  font-bold">and&nbsp;</p>
-              <Typed
-                className="text-text-primaryDark font-bold"
-                strings={[
-                  "front-end developer",
-                  "react developer",
-                  "web developer",
-                  "uxui developer",
-                  "front-end developer",
-                ]}
-                typeSpeed={30}
-                backSpeed={50}
-              />
-            </div>
-            <p className="text-text-secondaryDark text-[24px] font-normal my-[8px] pb-[16px]">
-              Let me show You...
-            </p>
+            </Reveal>
+            {/* Hi */}
+            <Reveal bg="#5918df">
+              <motion.div className="flex pt-[16px] flex-wrap text-[38px] sm:text-[28px]">
+                <h1 className="text-text-primaryDark  font-bold">
+                  Hi, my name is&nbsp;
+                </h1>
+                <div className="text-primary-mainDark  font-bold naming-animate ">
+                  Nattida Jangpipatnavakij
+                  <span className="opacity-0">exceed</span>
+                </div>
+              </motion.div>
+            </Reveal>
+            {/* I design */}
+            <Reveal bg="#5918df">
+              <div className="flex pb-[16px] text-[36px] sm:text-[24px] ">
+                <p className="text-text-primaryDark  font-bold">i&nbsp;</p>
+                <p className="text-text-primaryDark font-light italic font-palatino">
+                  design&nbsp;
+                </p>
+                <p className="text-text-primaryDark  font-bold">and&nbsp;</p>
+                <Typed
+                  className="text-text-primaryDark font-bold"
+                  strings={[
+                    "front-end developer",
+                    "react developer",
+                    "web developer",
+                    "uxui developer",
+                    "front-end developer",
+                  ]}
+                  typeSpeed={30}
+                  backSpeed={50}
+                />
+              </div>
+            </Reveal>
+            <Reveal bg="#ffffff">
+              <p className="text-text-secondaryDark text-[24px] font-normal my-[8px] pb-[16px]">
+                Let me show You...
+              </p>
+            </Reveal>
+
             <Link href="/assets/nattida-cv-front-end.pdf" target="_blank">
-              <button className="btn">Download Resume</button>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                className="btn"
+              >
+                Download Resume
+              </motion.button>
             </Link>
 
             <Link

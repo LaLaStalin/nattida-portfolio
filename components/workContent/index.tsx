@@ -9,6 +9,7 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 // Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -141,25 +142,37 @@ const workContent = ({
             <div className="grid grid-cols-3 gap-[16px] pt-[24px] ">
               {info.github && (
                 <Link href={info.github} target="_blank">
-                  <button className="btn text-primary-mainDark  hover:text-while">
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    className="btn text-primary-mainDark  hover:text-while"
+                  >
                     Github
-                  </button>
+                  </motion.button>
                 </Link>
               )}
 
               {info.figma && (
                 <Link href={info.figma} target="_blank">
-                  <button className="btn text-primary-mainDark  hover:text-while">
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    className="btn text-primary-mainDark  hover:text-while"
+                  >
                     Figma
-                  </button>
+                  </motion.button>
                 </Link>
               )}
 
               {info.visit && (
                 <Link href={info.visit} target="_blank">
-                  <button className="btn text-primary-mainDark  hover:text-while">
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    className="btn text-primary-mainDark  hover:text-while"
+                  >
                     Visit
-                  </button>
+                  </motion.button>
                 </Link>
               )}
             </div>
