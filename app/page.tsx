@@ -86,11 +86,12 @@ export default function Home() {
                 <Typed
                   className="text-text-primaryDark font-bold"
                   strings={[
+                    "fullstack developer",
                     "front-end developer",
+                    "backend developer",
                     "react developer",
-                    "web developer",
                     "uxui developer",
-                    "front-end developer",
+                    "fullstack developer",
                   ]}
                   typeSpeed={30}
                   backSpeed={50}
@@ -103,7 +104,7 @@ export default function Home() {
               </p>
             </Reveal>
 
-            <Link href="/assets/nattida-cv-front-end.pdf" target="_blank">
+            <Link href="/assets/cv-nattida-fullstack.pdf" target="_blank">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
